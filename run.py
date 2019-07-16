@@ -33,12 +33,12 @@ class Spider:
         response = urllib2.urlopen(request)
         # 读取页面, 返回给html
         html = response.read()
+        html = html.decode('gbk').encode('utf-8')
         print html
 
 
 if __name__ == '__main__':
-    print '请按下回车开始'
-    raw_input()
+
     # 定义一个Spider对象
     spider = Spider()
     spider.loadPage(1)
